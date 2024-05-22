@@ -67,8 +67,7 @@ def get_prompts(db_root_path, table_json):
 def conclude_each_column(prompt_dic, output_path):
     output_dic = {}
     for column, prompt in prompt_dic.items():
-        # output = collect_response(prompt, max_tokens = 800, stop = '\n')
-        output = json.load(open('/Users/quge/HKU/research/tasql/outputs/column_meaning.json', 'r'))[column]
+        output = collect_response(prompt, max_tokens = 800, stop = '\n')
         output_dic[column] = output
         
         if os.path.exists(output_path):

@@ -4,8 +4,8 @@ import tqdm
 import sqlite3
 import csv
 from src.prompt_bank import dummy_sql_prompt, sr_examples, generate_sr, sr2sql
-from src.llm import collect_response
-
+# from src.llm import collect_response
+from src.API_bank import collect_response
 class BaseModule():
     def __init__(self, db_root_path, mode):
         self.db_root_path = db_root_path
@@ -136,8 +136,7 @@ class TASL(BaseModule):
     def get_schema(self, question_id):
         question_info = self.question_json[question_id]
         db_id = question_info['db_id']
-        # _, dummy_sql = self.generate_dummy_sql(question_id)
-        dummy_sql = json.load(open('/Users/quge/HKU/research/birdcode/res/ir/gpt4/direct_sql_w_all_columns_we.json', 'r'))[str(question_id)]
+        _, dummy_sql = self.generate_dummy_sql(question_id)
     
         #extract schema from dummy_sql
         table_info = [content for content in self.table_json if content['db_id'] == db_id][0]
@@ -209,9 +208,7 @@ class TALOG(BaseModule):
         sr_prompt = generate_sr.format(sr_example = sr_examples, question = q, schema = processed_schema, column_description = database_schema,
                                        evidence = e)
         sr_prompt = sr_prompt.strip('\n')
-        # sr = collect_response(sr_prompt, max_tokens=800)
-        sr = json.load(open('/Users/quge/HKU/research/birdcode/res/ir/gpt4/ir_pandas_with_value_res_we.json', 'r'))[str(question_id)]
-        
+        sr = collect_response(sr_prompt, max_tokens=800)
         # print(sr)
         return sr_prompt, sr
     
@@ -226,8 +223,7 @@ class TALOG(BaseModule):
         _, fk = self.generate_pk_fk(question_id)
         sr2sql_prompt = sr2sql.format(question = q, schema = schema, evidence = e, column_description = database_schema, SR = sr, foreign_key_dic = fk)
         sr2sql_prompt = sr2sql_prompt.strip('\n')
-        # tmp_sql = collect_response(sr2sql_prompt)
-        tmp_sql = json.load(open('/Users/quge/HKU/research/birdcode/res/sql/gpt4/pandas_ir2sql_with_value_we.json', 'r'))[str(question_id)]
+        tmp_sql = collect_response(sr2sql_prompt)
         #postprocess the tmp_sql to valid sql
         sql = 'SELECT ' + tmp_sql.replace('\"','')
         return sr, sql

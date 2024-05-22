@@ -8,7 +8,7 @@ from src.modules import TASL, TALOG
 def generate_sql(tasl, talog, output_path):
     question_json = tasl.question_json
     output_dic = {}
-    for i in tqdm.tqdm(range(len(question_json[:3]))):
+    for i in tqdm.tqdm(range(len(question_json))):
         sl_schemas = tasl.get_schema(i)
         _, sql = talog.sr2sql(i, sl_schemas)
         db_id = question_json[i]['db_id']

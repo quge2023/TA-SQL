@@ -1,17 +1,22 @@
-This is the official repo for ["Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation"](https://openreview.net/pdf?id=TaUrBzbSlKl). 
+# Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation
+
+[![Data Link](https://img.shields.io/badge/BIRD-benchmark-green.svg)](https://bird-bench.github.io/)
+[![Leaderboard](https://img.shields.io/badge/SPIDER-benchmark-pink.svg)](https://yale-lily.github.io/spider)
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![OpenAI 0.27.6](https://img.shields.io/badge/OpenAI-0.27.6-orange.svg)](https://pypi.org/project/openai/)
 
 
-
+This is the official repository for the paper ["Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation"](https://openreview.net/pdf?id=TaUrBzbSlKl), which has been accepted to ACL Findings 2024.
 
 ## Overview
 
-In this work, we first identify and categorize the common types of hallucinations at each stage in text-to-SQL. We then introduce a novel strategy, **T**ask **A**lignment (TA), designed to mitigate hallucinations at each stage. We further propose a text-to-SQL framework named **TA-SQL**, which consists of a **T**ask-**A**ligned **S**chema **L**inking (**TASL**) module and a **T**ask-**A**ligned **LOG**ical synthesis (**TALOG**) module. This repo contains all code for the implementation and evaluation of TA-SQL, utilizing GPT-4 as the backend, on BIRD dev set as stated in our paper.
+In this work, we first identify and categorize the common types of hallucinations at each stage in text-to-SQL. We then introduce a novel strategy, **T**ask **A**lignment (TA), designed to mitigate hallucinations at each stage. We further propose a text-to-SQL framework named **TA-SQL**, which consists of a **T**ask-**A**ligned **S**chema **L**inking (**TASL**) module and a **T**ask-**A**ligned **LOG**ical synthesis (**TALOG**) module. This repo contains all code for the implementation and evaluation of TA-SQL, utilizing GPT-4 as the backend, on BIRD dev set as stated in our paper. 
 
 <img src="./assets/main_figure.png" align="middle" width="95%">
 
 ## Environment Setup
 
-1. Config your local environment.
+• Use the following command to config local environment
 
    ```bash
     $ conda create -n tasql python=3.8.16
@@ -19,7 +24,12 @@ In this work, we first identify and categorize the common types of hallucination
     $ pip3 install -r requirements.txt
    ```
 
-2. OpenAI key?
+• Set environment variables of Azure OpenAI API or modify your own OpenAI configure in `./src/llm.py`:
+   ```bash
+   export OPENAI_API_BASE="YOUR_OPENAI_API_BASE"
+   export OPENAI_API_VERSION="YOUR_OPENAI_API_VERSION"
+   export OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+   ```
 
 ## Data Preparation
 
