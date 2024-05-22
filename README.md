@@ -16,7 +16,7 @@ In this work, we first identify and categorize the common types of hallucination
 
 ## Environment Setup
 
-• Use the following command to config local environment
+• Use the following command to configure local environment:
 
    ```bash
     $ conda create -n tasql python=3.8.16
@@ -24,7 +24,7 @@ In this work, we first identify and categorize the common types of hallucination
     $ pip3 install -r requirements.txt
    ```
 
-• Set environment variables of Azure OpenAI API or modify your own OpenAI configure in `./src/llm.py`:
+• Set environment variables for the Azure OpenAI API or modify your own OpenAI config in `./src/llm.py`:
    ```bash
    export OPENAI_API_BASE="YOUR_OPENAI_API_BASE"
    export OPENAI_API_VERSION="YOUR_OPENAI_API_VERSION"
@@ -33,23 +33,23 @@ In this work, we first identify and categorize the common types of hallucination
 
 ## Data Preparation
 
-The BIRD dev set used in the paper could be directly download from the [Google Drive link](https://drive.google.com/file/d/1DR8LpYkFHxs0JB5GDVgC3tR4B-bd0I9N/view?usp=drive_link). Please put the unzipped folder under `./data/` after downloading sucessfully. The dataset should under the `./data/dev_databases/`countains the following resources:
+The BIRD dev set used in the paper could be directly downloaded from the [Google Drive link](https://drive.google.com/file/d/1DR8LpYkFHxs0JB5GDVgC3tR4B-bd0I9N/view?usp=drive_link). Please put the unzipped folder under `./data/` after downloading sucessfully. The dataset under the `./data/dev_databases/` should contain the following resources:
  
 - `database`: Each database folder should contain 
   - `database_description`: The csv files are manufactured to describe database schema and its values for models to explore or references.
   - `sqlite`: The database contents in BIRD.
 - `dev_tables.json`: The file contains related information for each database, including `db_id`, `table_names_originial`, etc,. 
-- `dev.json`: The file contains text-to-SQL pairs with the oracle knowledge evidence. 
+- `dev.json`: The file contains text-to-SQL paired with the oracle knowledge evidence. 
 
 ## Collect results
 
-To run this project, you could directly execute the command libe by following instructions (You may need to adjust parameters and paths with your preference):
+To run this project, you could directly execute the command line by following the instruction (You may need to adjust parameters and paths with your preference):
    ```bash
     $ sh ./run.sh
    ```
 
 ## Evaluation
-To run the evaluation, you need to put the ground-truth sql file `dev_gold.sql` in the `./data/` first. Then you could evaluate the results by the following command line:
+To run the evaluation, you need to put the ground-truth sql file `dev_gold.sql` in the `./data/` first. Then you could evaluate the results using the following command line:
 
    ```bash
     $ sh ./run_evaluation.sh
@@ -72,6 +72,7 @@ To run the evaluation, you need to put the ground-truth sql file `dev_gold.sql` 
 ├─outputs/
 ├─README.md
 ├─requirements.txt
+├─run_evaluation.sh
 ├─run.py 
 ├─run.sh 
 ```

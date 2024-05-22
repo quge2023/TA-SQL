@@ -2,7 +2,7 @@ import os
 import json
 from llm import collect_response
 from prompt_bank import column_meaning_prompt
-from utilis import new_directory
+from utils import new_directory
 import csv
 import sqlite3
 import tqdm

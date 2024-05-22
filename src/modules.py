@@ -4,8 +4,8 @@ import tqdm
 import sqlite3
 import csv
 from src.prompt_bank import dummy_sql_prompt, sr_examples, generate_sr, sr2sql
-# from src.llm import collect_response
-from src.API_bank import collect_response
+from src.llm import collect_response
+
 class BaseModule():
     def __init__(self, db_root_path, mode):
         self.db_root_path = db_root_path

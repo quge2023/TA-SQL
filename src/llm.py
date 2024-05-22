@@ -3,7 +3,7 @@ import time
 from tqdm import tqdm
 import openai
 
-# Modify your own openai configure
+# Modify your own openai config
 openai.api_base = os.environ["OPENAI_API_BASE"]
 openai.api_version = os.environ["OPENAI_API_VERSION"]
 openai.api_key = os.environ["OPENAI_API_KEY"]
