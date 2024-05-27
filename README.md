@@ -6,7 +6,7 @@
 [![OpenAI 0.27.6](https://img.shields.io/badge/OpenAI-0.27.6-orange.svg)](https://pypi.org/project/openai/)
 
 
-This is the official repository for the paper ["Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation"](https://openreview.net/pdf?id=TaUrBzbSlKl), which has been accepted to ACL Findings 2024.
+This is the official repository for the paper ["Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation"](http://arxiv.org/abs/2405.15307), which has been accepted to ACL Findings 2024.
 
 ## Overview
 
