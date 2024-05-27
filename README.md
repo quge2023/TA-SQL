@@ -41,7 +41,7 @@ The BIRD dev set used in the paper could be directly downloaded from the [Google
 - `dev_tables.json`: The file contains related information for each database, including `db_id`, `table_names_originial`, etc,. 
 - `dev.json`: The file contains text-to-SQL paired with the oracle knowledge evidence. 
 
-## Collect results
+## Collect Results
 
 To run this project, you could directly execute the command line by following the instruction (You may need to adjust parameters and paths with your preference):
    ```bash
@@ -80,7 +80,14 @@ To run the evaluation, you need to put the ground-truth sql file `dev_gold.sql` 
 ## Citation
 Please cite the repo if you think our work is helpful to you. 
 ```text
-xxxx  
+@misc{qu2024generation,
+      title={Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation}, 
+      author={Ge Qu and Jinyang Li and Bowen Li and Bowen Qin and Nan Huo and Chenhao Ma and Reynold Cheng},
+      year={2024},
+      eprint={2405.15307},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+} 
 ```
 
 
