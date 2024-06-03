@@ -80,14 +80,12 @@ To run the evaluation, you need to put the ground-truth sql file `dev_gold.sql` 
 ## Citation
 Please cite the repo if you think our work is helpful to you. 
 ```text
-@misc{qu2024generation,
-      title={Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation}, 
-      author={Ge Qu and Jinyang Li and Bowen Li and Bowen Qin and Nan Huo and Chenhao Ma and Reynold Cheng},
-      year={2024},
-      eprint={2405.15307},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
-} 
+@article{qu2024before,
+  title={Before Generation, Align it! A Novel and Effective Strategy for Mitigating Hallucinations in Text-to-SQL Generation},
+  author={Qu, Ge and Li, Jinyang and Li, Bowen and Qin, Bowen and Huo, Nan and Ma, Chenhao and Cheng, Reynold},
+  journal={arXiv preprint arXiv:2405.15307},
+  year={2024}
+}
 ```
 
 
