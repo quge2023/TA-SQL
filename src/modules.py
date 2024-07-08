@@ -130,7 +130,7 @@ class TASL(BaseModule):
         db_prompt = db_prompt_dic[db_id]
         database_schema = self._generate_database_schema(db_prompt)
         prompt = dummy_sql_prompt.format(database_schema = database_schema, primary_key_dic = pk_dict, foreign_key_dic = fk_dict, question_prompt = q, evidence = evidence)
-        dummy_sql = collect_response(dummy_sql_prompt, stop = 'return SQL')
+        dummy_sql = collect_response(prompt, stop = 'return SQL')
         return prompt, dummy_sql
         
     def get_schema(self, question_id):
