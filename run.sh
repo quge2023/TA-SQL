@@ -3,8 +3,9 @@ mode='dev'
 meaning_output_path='./outputs/column_meaning.json' 
 sql_output_path='./outputs/predict_dev.json'
 
-#As stated in Appendix A.1, we first generate succient description for each column.
+#As stated in Appendix A.1, we first generate a succint description for each column.
 #You can comment out the following code and directly utilize './outputs/column_meaning.json' to bypass this step
+
 # echo 'Generate succient column descriptions.'
 # python3 ./src/conclude_meaning.py --db_root_path ${db_root_path} --mode ${mode} --output_path ${meaning_output_path}
 # echo 'Description generation is finished.'
