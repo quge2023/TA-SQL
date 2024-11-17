@@ -27,8 +27,12 @@ class BaseModule():
             cursor = conn.cursor()
             csv_dir = os.path.join(self.db_root_path,db_id,'database_description')
             otn_list = table_info['table_names_original']
-            for otn in otn_list:
-                csv_path = os.path.join(os.path.join(csv_dir, f"{otn}.csv"))
+            tn_list = table_info['table_names']
+            for otn,tn in zip(otn_list, tn_list):
+                if os.path.exists(os.path.join(csv_dir, f"{tn}.csv")):
+                    csv_path = os.path.join(os.path.join(csv_dir, f"{tn}.csv"))
+                else:
+                    csv_path = os.path.join(os.path.join(csv_dir, f"{otn}.csv"))
                 csv_dict = csv.DictReader(open(csv_path, newline='', encoding="latin1"))
                 column_info = {}
                 
